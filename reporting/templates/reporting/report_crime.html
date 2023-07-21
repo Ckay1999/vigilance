@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8">
     <title>  </title>
-    <link rel="stylesheet" href="{% static 'stylesheet/report_crime.css' %}">
+    <link rel="stylesheet" href="{% static 'stylesheet/register.css' %}">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 
@@ -17,7 +17,7 @@
   <div class="main" ></div>
 <div class="register">
 
-<h2>Report Crime</h2>
+<h1>Report Crime</h1>
 <form method="post" id="register">
   {% csrf_token %}
   <div class="form-group">
@@ -34,6 +34,7 @@
   <div class="form-group">
     <label for="e">Select District  (Select State/UT first )</label>
      <select name="district" id="district" class="textinp">
+      <option selected disabled value="">Select State/UT First</option>
      </select>
   </div>
   
@@ -70,9 +71,6 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <div>
     <script>
-    {% for message in messages %}
-    swal('{{ message }}')
-    {% endfor %}
 </script>
 </div>
 </body>

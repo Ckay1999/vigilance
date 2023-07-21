@@ -21,6 +21,23 @@
     padding:10px 20px 10px 20px;
 }
 
+@media (max-width: 768px) {
+  .map-container {
+    flex-direction: column; /* Change to vertical stacking */
+    height: auto; /* Remove fixed height */
+    width:85%;
+  }
+
+  .map-section {
+    margin-top: 10vh;
+    height: auto; /* Remove fixed height */
+    width:90%;
+  }
+  table {
+  border-collapse: collapse;
+  width: 80%;
+}
+}
 
 .h3{
 font-weight: 600;
@@ -50,20 +67,6 @@ padding: 10px 0 60px 0;
     padding: 0 35px 0 15px;   
 }
 
-.state-dropdown{
-    width:300px;
-    margin-top: 10px;
-    font-size: 18px;
-   
-}
-.state{
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    padding-left: 5px;
-    border-radius: 5px;
-}
-
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -84,4 +87,17 @@ tr:nth-child(even){background-color: #FFD5D5}
 th {
   background-color: #463f3a;
   color: white;
+}
+
+.state-dropdown{
+    width:300px;
+    margin-top: 10px;
+    font-size: 18px;
+   
+}
+.state{
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    padding-left: 5px;
+    border-radius: 5px;
 }

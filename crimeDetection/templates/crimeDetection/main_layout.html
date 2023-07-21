@@ -10,23 +10,27 @@
         <title></title>
 </head>
 <body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="{% url 'app-home' %}" class="nav-logo">Vigilance</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{% url 'app-home' %}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{% url 'services-page' %}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{% url 'public' %}" class="nav-link">Dashboard</a></li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+                {% endif %}
+                
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
-<nav>
-<div class="logo">
-<h2> <a href="{% url 'app-home' %}">Vigilance </a></h2>
-</div>
-<ul class="items">
-<li><a href="{% url 'app-home' %}">Home</a></li>
-<li><a href="{% url 'services-page' %}">Services</a></li>
-<li><a href="{% url 'public' %}">Dashboard</a></li>
-{% if user.is_authenticated %}
-<li><a href="{% url 'logout' %}">Logout</a></li>
-{% endif %}
-</ul>
-</nav>
-
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="{% static 'javascript/main_layout.js' %}"></script>
 
 </body>
 </html>

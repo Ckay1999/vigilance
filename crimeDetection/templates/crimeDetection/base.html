@@ -10,18 +10,15 @@
 
         <title>Hotspot Mapping for Crime Detection</title>
 </head>
+
 <body>
-        <section class="showcase">
-    <header>
-    <h2 class="web_heading"><a href="{% url 'app-home' %}">Vigilance</a></h2>
-    <div class="toggle"></div>
-    </header>
+{% include 'crimeDetection/main_layout.html' %}
 
+<section class="showcase">
 <video src="{% static 'video/cvr.mp4' %}" muted loop autoplay></video>
-
-
 <div class="overlay"></div>
 <div class="text">
+    
 <h2>Hotspot Mapping for Crime Detection</h2>
 <p>
     <h3>An initiative to raise awareness and make Indian Districts Safer</h3>
@@ -30,20 +27,10 @@
 
 
 
-
 <a href="{% url 'services-page' %}">Explore</a>
 
 </div>
 </section>
-
-<div class="menu">
-<ul>
-<li><a href="{% url 'app-home' %}">Home</a></li>
-<li><a href="{% url 'services-page' %}">Services</a></li>
-<li><a href="{% url 'public' %}">Dashboard</a></li>
-</ul>
-</div>
-
 
 <script src="{% static 'javascript/base.js' %}"></script>
 
