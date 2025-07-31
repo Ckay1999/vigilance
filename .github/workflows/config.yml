@@ -16,4 +16,4 @@ jobs:
       run: echo "Hello, GitHub Actions!" # This step runs a simple command
 
     - name: List files
-      run: ls -l # This step lists files in the workspace
+      run: dir # This step lists files in the workspace
