@@ -1,0 +1,19 @@
+# .github/workflows/my-first-action.yml
+
+name: My First Workflow
+
+on: [push] # This workflow runs on every push to any branch
+
+jobs:
+  build: # This is the ID for your job
+    runs-on: windows-latest # This job will run on a fresh Ubuntu virtual machine
+
+    steps:
+    - name: Checkout code # This step checks out your repository code
+      uses: actions/checkout@v4
+
+    - name: Say Hello
+      run: echo "Hello, GitHub Actions!" # This step runs a simple command
+
+    - name: List files
+      run: ls -l # This step lists files in the workspace
