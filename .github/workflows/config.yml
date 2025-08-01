@@ -17,3 +17,6 @@ jobs:
 
     - name: List files
       run: dir # This step lists files in the workspace
+
+    - name: Running calculator
+      run: python dummy_calc.py
