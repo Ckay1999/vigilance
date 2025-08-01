@@ -16,4 +16,4 @@ jobs:
       run: echo "Hello, GitHub Actions!"
 
     - name: List files
-      run: dir /A:-D
+      run: dir
