@@ -6,7 +6,7 @@ on: [push] # This workflow runs on every push to any branch
 
 jobs:
   build:
-    runs-on: windows-latest 
+    runs-on: self-hosted 
 
     steps:
     - name: Checkout code # This step checks out the repository code
