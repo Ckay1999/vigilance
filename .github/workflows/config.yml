@@ -5,15 +5,15 @@ name: My First Workflow
 on: [push] # This workflow runs on every push to any branch
 
 jobs:
-  build: # This is the ID for your job
-    runs-on: windows-latest # This job will run on a fresh Ubuntu virtual machine
+  build:
+    runs-on: windows-latest 
 
     steps:
-    - name: Checkout code # This step checks out your repository code
+    - name: Checkout code # This step checks out the repository code
       uses: actions/checkout@v4
 
     - name: Say Hello
-      run: echo "Hello, GitHub Actions!" # This step runs a simple command
+      run: echo "Hello, GitHub Actions!"
 
     - name: List files
-      run: dir # This step lists files in the workspace
+      run: dir /A:-D
