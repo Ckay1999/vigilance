@@ -5,15 +5,7 @@ on:
 
 jobs:
   compile-hamoa-1-1:
-    runs-on: self-hosted
-
-    env:
-      NH_BINS: "\\\\qipl-dsprpc-036\\Dropbox\\GIT_HUB_COMPILATION"
-      QCDK_PATH: "\\\\crmhyd\\nsid-hyd-05\\APSS.WP_HA.1.0-08309-SC8380XAAASFNWAA-1\\WP\\qcdk\\rel\\10.9"
-      Chipset: "8380"
-      Variant: "Release"
-      Driver: "qcnspmcdm"
-
+    runs-on: windows-latest
     steps:
     - name: Clean workspace
       run: Remove-Item -Path * -Recurse -Force
