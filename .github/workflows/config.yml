@@ -1,16 +1,15 @@
-name: Cron job
+name: Sample Scheduler Workflow (Every 5 min)
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
+    
+  workflow_dispatch:
 
 jobs:
-  compile-hamoa-1-1:
-    runs-on: windows-latest
+  build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Clean workspace
-      run: Remove-Item -Path * -Recurse -Force
-      shell: pwsh
+      - uses: actions/checkout@v3
 
-    - name: Sync Workspace
-      run: echo "Trying out cron job"
-    
+      - name: Run a one-line script
+        run: echo Hello Everyone !
