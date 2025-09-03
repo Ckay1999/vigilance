@@ -1,16 +1,16 @@
-name: Cron job
+name: Trying cron job
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   compile-hamoa-1-1:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps:
     - name: Clean workspace
       run: Remove-Item -Path * -Recurse -Force
       shell: pwsh
 
-    - name: Sync Workspace
+    - name: Logging
       run: echo "Trying out cron job"
     
