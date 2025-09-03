@@ -1,22 +1,24 @@
-# .github/workflows/my-first-action.yml
-
-name: My First Workflow
-
-on: [push] # This workflow runs on every push to any branch
+name: Cron job
+on:
+  schedule:
+    - cron: '*/2 * * * *'
 
 jobs:
-  build:
-    runs-on: self-hosted 
+  compile-hamoa-1-1:
+    runs-on: self-hosted
+
+    env:
+      NH_BINS: "\\\\qipl-dsprpc-036\\Dropbox\\GIT_HUB_COMPILATION"
+      QCDK_PATH: "\\\\crmhyd\\nsid-hyd-05\\APSS.WP_HA.1.0-08309-SC8380XAAASFNWAA-1\\WP\\qcdk\\rel\\10.9"
+      Chipset: "8380"
+      Variant: "Release"
+      Driver: "qcnspmcdm"
 
     steps:
-    - name: Checkout code # This step checks out the repository code
-      uses: actions/checkout@v4
+    - name: Clean workspace
+      run: Remove-Item -Path * -Recurse -Force
+      shell: pwsh
 
-    - name: Say Hello
-      run: echo "Hello, GitHub Actions!"
-
-    - name: List files
-      run: dir # This step lists files in the workspace
-
-    - name: Running calculator
-      run: python dummy_calc.py
+    - name: Sync Workspace
+      run: echo "Trying out cron job"
+    
